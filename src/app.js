@@ -12,7 +12,7 @@ export class App {
   doapi() {
     console.log('doing api baby');
 
-    this.http.fetch('http://localhost:9000/api/testme')
+    this.http.fetch('http://localhost:7000/api/testme')
       .then(response => response.json())
       .then(data => {
         this.apiresp = JSON.stringify(data);
