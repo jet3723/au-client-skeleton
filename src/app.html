@@ -1,22 +1,29 @@
 <template>
-  <div style="margin-left:5px;margin-right=5px;">
-    <h1>${message}</h1>
+  <require from="./styles.css"></require>
+  <!-- Combines Bootstrap with custom CSS to get page layout -->
 
-    <div>
-      <p>This app is intended to be used in conjunction with the server provided in 
-      <a href="https://github.com/jet3723/au-client-server-skeleton.git">au-client-server-skeleton.</a>
-      The button down below activates a test web service API to the server and
-      displays the server response.
-    </p>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div>
-        <button type="button" click.trigger="doapi()">API Activate</button>
-        <button type="button" click.trigger="doclear()">Clear Result</button>
-        <div id="result">${apiresp}</div>
+  <div class="container-fluid arfh">
+    <!-- Using a Bootstrap container and adding full height attributes -->
+
+    <div class="row arheader">
+      <!-- Add nice page header that displays the title -->
+      <h1>Application Runner</h1>
+    </div>
+
+    <div class="row arbody">
+      <!-- Add two columns, one for navigation and one for content -->
+      <div class="col-md-3 well arfh">
+        <!-- Navigation column is a Bootstrap nav component that takes its content based upon the router -->
+        <ul class="nav nav-stacked">
+          <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+            <a href.bind="row.href">${row.title}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9 well arfh">
+        <!-- Content column displays the active page based upon the router selection -->
+        <router-view></router-view>
       </div>
     </div>
-  </div>
   </div>
 </template>

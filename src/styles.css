@@ -1,0 +1,22 @@
+html, body { 
+  height: 100%; 
+}
+
+.arheader {
+  background-color: #005580;
+}
+
+.arheader h1 {
+  color: white;
+  margin-left: 5px;
+}
+
+.arbody {
+  margin-top:5px;
+  height: 100%;
+
+}
+
+.arfh {
+  height: 95%;
+}
